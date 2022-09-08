@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Book My Show Clone</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ticket_Text">Enjoy faster show booking through our recommendations tailored for you .</string>
+
+    <string name="marketing1">Enjoy faster show booking through our recommendations tailored for you .</string>
+    <string name="marketing2">Forget to buy snacks for movie night , do not worry we are here , just book us</string>
+    <string name="marketing3">Now save money on your movie tickets get coupon code for restaurants and cafes .</string>
+    <string name="todo">TODO</string>
+    <string name="or">OR</string>
+    <string name="it_all_starts_here">It All Starts Here</string>
+
+    <string-array name="marketingArray">
+        <item>@string/marketing1</item>
+        <item>@string/marketing2</item>
+        <item>@string/marketing3</item>
+    </string-array>
+</resources>

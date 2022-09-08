@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/ticketImage"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ticket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/marketingText"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="wrap_content"
+        android:text="@string/ticket_Text"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLines="4"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@+id/ticketImage"
+        app:layout_constraintStart_toStartOf="@+id/ticketImage"
+        app:layout_constraintTop_toBottomOf="@+id/ticketImage" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/googleCardView"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="@+id/marketingText"
+        app:layout_constraintStart_toStartOf="@+id/marketingText"
+        app:layout_constraintTop_toBottomOf="@+id/marketingText"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="1dp"
+        android:backgroundTint="@color/white">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue with Google"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/grey"
+            android:layout_gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/EmailCardView"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_20ssp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="@+id/googleCardView"
+        app:layout_constraintStart_toStartOf="@+id/googleCardView"
+        app:layout_constraintTop_toBottomOf="@+id/googleCardView"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="1dp"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Continue with Gmail"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_11ssp" />
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/gmail"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/or"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@+id/EmailCardView"
+        app:layout_constraintStart_toStartOf="@+id/EmailCardView"
+        app:layout_constraintTop_toBottomOf="@+id/EmailCardView" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/_20ssp"
+        android:layout_height="@dimen/_20ssp"
+        android:layout_marginStart="@dimen/_26sdp"
+        android:src="@drawable/flag"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/countryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+91"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/PhoneNumberEditText"
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:hint="Continue with mobile number "
+        android:textColor="@color/grey"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/_13ssp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/countryCode"
+        app:layout_constraintStart_toEndOf="@+id/countryCode"
+        app:layout_constraintTop_toTopOf="@+id/countryCode" />
+
+    <View
+        android:layout_width="@dimen/_210sdp"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@+id/PhoneNumberEditText"
+        app:layout_constraintEnd_toEndOf="@+id/PhoneNumberEditText"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/countryCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
