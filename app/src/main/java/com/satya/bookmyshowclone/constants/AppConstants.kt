@@ -9,5 +9,7 @@ class AppConstants {
         const val movieBaseUrl = "https://api.themoviedb.org/3/"
         const val movieImageBaseUrl = "https://image.tmdb.org/t/p/w500/"
         const val youtubeBaseUrl = "https://www.youtube.com/watch?v="
+        const val RC_SIGN_IN = 1000
+        const val sharedPrefFile = "BookMyShowSharedPreference"
     }
 }

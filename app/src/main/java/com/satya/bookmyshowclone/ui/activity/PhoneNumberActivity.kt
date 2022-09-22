@@ -16,5 +16,14 @@ class PhoneNumberActivity : AppCompatActivity() {
         binding = ActivityPhoneNumberBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //back button clicked
+        backButtonCalled()
+
+    }
+
+    private fun backButtonCalled() {
+        binding.back.setOnClickListener {
+            this.onBackPressed()
+        }
     }
 }
