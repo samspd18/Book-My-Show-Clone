@@ -6,7 +6,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.InputType
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -22,7 +24,7 @@ import com.satya.bookmyshowclone.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    val RC_SIGN_IN = AppConstants.RC_SIGN_IN
+    private val RC_SIGN_IN = AppConstants.RC_SIGN_IN
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,12 +50,16 @@ class LoginActivity : AppCompatActivity() {
         val handler = Handler(Looper.getMainLooper())
         val updateTask: Runnable = object : Runnable {
             override fun run() {
-                if (randomIndex == 0) {
-                    randomIndex = 1
-                } else if(randomIndex == 1) {
-                    randomIndex = 2
-                } else if(randomIndex == 2) {
-                    randomIndex = 0
+                when (randomIndex) {
+                    0 -> {
+                        randomIndex = 1
+                    }
+                    1 -> {
+                        randomIndex = 2
+                    }
+                    2 -> {
+                        randomIndex = 0
+                    }
                 }
                 binding.marketingText.text = resources.getStringArray(R.array.marketingArray)[randomIndex]
                 handler.postDelayed(this, 3500)
@@ -89,7 +95,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach
             // a listener.
@@ -104,9 +109,9 @@ class LoginActivity : AppCompatActivity() {
         try {
             val account = task.getResult(ApiException::class.java)
             // Signed in successfully, show authenticated UI.
-            //updateUI(account)
 
             val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+
             val editor: SharedPreferences.Editor =  sharedPreferences.edit()
 
             if(account != null) {
@@ -116,11 +121,13 @@ class LoginActivity : AppCompatActivity() {
 
                 editor.apply()
 
-//                val intent = Intent(this, MainActivity::class.java)
-//                startActivity(intent)
-//                finish()
+                //For adding phoen number
+                addingPhoneNumber()
 
-                Log.e("Google", account.email.toString())
+                val intent = Intent(this, CityActivity::class.java)
+                startActivity(intent)
+                finish()
+
             } else {
                 Toast.makeText(applicationContext, "Login Failed , Try again ", Toast.LENGTH_SHORT).show()
                 val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -136,6 +143,38 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Some thing went wrong.", Toast.LENGTH_SHORT).show()
             //updateUI(null)
         }
+    }
+
+    private fun addingPhoneNumber() {
+        val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Phone Number")
+
+        // Set up the input
+        val input = EditText(this)
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.hint = "Enter your phone number"
+        input.inputType = InputType.TYPE_CLASS_NUMBER
+        builder.setView(input)
+
+        // Set up the buttons
+        builder.setPositiveButton("OK") { _, _ ->
+            // Here you get get input text from the Edittext
+            val mobileNumber = input.text.toString()
+            val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+
+            if(mobileNumber.length == 10) {
+                Toast.makeText(applicationContext, "Logged In successfully", Toast.LENGTH_SHORT).show()
+                val editor: SharedPreferences.Editor =  sharedPreferences.edit()
+                editor.putString("phone",mobileNumber)
+                editor.apply()
+
+            } else {
+                Toast.makeText(applicationContext, "Kindly check your number", Toast.LENGTH_SHORT).show()
+            }
+        }
+        builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
+
+        builder.show()
     }
 
 }

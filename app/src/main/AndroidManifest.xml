@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.satya.bookmyshowclone">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,9 +16,13 @@
         android:theme="@style/Theme.BookMyShowClone"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.PhoneNumberActivity"
+            android:name=".ui.activity.CityActivity"
             android:exported="false"
             android:theme="@style/Theme.BookMyShowClone.NoActionBar"/>
+        <activity
+            android:name=".ui.activity.PhoneNumberActivity"
+            android:exported="false"
+            android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="false"

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -34,17 +34,17 @@
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp"
         android:text="Mobile Number"
         android:textColor="@color/grey"
         android:textSize="@dimen/_10ssp"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/title1"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/title1"
+        app:layout_constraintTop_toBottomOf="@+id/title1" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView7"
@@ -55,10 +55,10 @@
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/title2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintStart_toStartOf="@+id/title2"
+        app:layout_constraintTop_toBottomOf="@+id/title2">
 
         <ImageView
             android:layout_width="@dimen/_15sdp"
@@ -79,6 +79,8 @@
         <EditText
             android:id="@+id/PhoneNumberEditText"
             android:layout_width="@dimen/_180sdp"
+            android:inputType="number"
+            android:maxLength="10"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_75sdp"
@@ -101,6 +103,7 @@
 
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Continue"
         android:layout_width="@dimen/_290sdp"
         android:layout_height="@dimen/_30sdp"
         android:backgroundTint="@color/book_my_show_red"
@@ -108,7 +111,8 @@
         android:layout_marginBottom="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -121,177 +125,317 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView1"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_marginStart="@dimen/_5sdp"
+        android:id="@+id/otpVerify"
+        android:layout_width="@dimen/_290sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:backgroundTint="@color/book_my_show_red"
         app:cardCornerRadius="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView6"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView2"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp"
-        tools:ignore="MissingConstraints">
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
 
-        <EditText
-            android:id="@+id/otp2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:textColor="@color/black"
-            android:maxLines="1"
-            android:inputType="number"
-            android:nextFocusDown="@id/otp3"
-            android:nextFocusForward="@id/otp3"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:layout_gravity="center"/>
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView5"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
+        android:id="@+id/Save"
+        android:layout_width="@dimen/_290sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:backgroundTint="@color/book_my_show_red"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:layout_gravity="center"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otpFullView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_45sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView1"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView6"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView2"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/otp2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@id/otp3"
+                android:nextFocusForward="@id/otp3"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView5"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="1dp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView4"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/otp6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView6"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView1"
+            app:layout_constraintStart_toStartOf="@+id/otpFullView"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView1"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otp1"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@id/otp2"
+                android:nextFocusForward="@id/otp2"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView4"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView5"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView3"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView5"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/otp5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLines="1"
+                android:nextFocusDown="@id/otp6"
+                android:nextFocusForward="@id/otp6"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView3"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView1"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView3"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/otp3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@id/otp4"
+                android:nextFocusForward="@id/otp4"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView4"
+            app:layout_constraintStart_toEndOf="@+id/materialCardView2"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView4"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/otp4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@id/otp5"
+                android:nextFocusForward="@id/otp5"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/_18ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Name"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="@+id/nameCardView"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="@+id/title1"
+        app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/nameCardView"
+        android:layout_width="@dimen/_265sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="@dimen/_5sdp"
-        app:layout_constraintEnd_toEndOf="@+id/materialCardView7"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView4"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView7"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/title1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/title1"
+        app:layout_constraintTop_toBottomOf="@+id/nameTitle"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:inputType="text"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/_13ssp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/mailTitile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Email"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/nameCardView"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="@+id/nameCardView"
+        app:layout_constraintTop_toBottomOf="@+id/nameCardView" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mailMaterialCardView"
+        android:layout_width="@dimen/_265sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/nameCardView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameCardView"
+        app:layout_constraintTop_toBottomOf="@+id/mailTitile"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp">
 
         <EditText
-            android:id="@+id/otp6"
+            android:id="@+id/mailEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/grey"
             android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
+            android:textSize="@dimen/_13ssp" />
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView6"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        app:cardCornerRadius="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_15sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView1"
-        app:layout_constraintStart_toStartOf="@+id/materialCardView7"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView1"
-        app:layout_constraintVertical_bias="0.0"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/otp1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:inputType="number"
-            android:maxLength="1"
-            android:nextFocusDown="@id/otp2"
-            android:nextFocusForward="@id/otp2"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView4"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        app:cardCornerRadius="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView5"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView3"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView5"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp">
-
-        <EditText
-            android:id="@+id/otp5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:textColor="@color/black"
-            android:maxLines="1"
-            android:inputType="number"
-            android:nextFocusDown="@id/otp6"
-            android:nextFocusForward="@id/otp6"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        app:cardCornerRadius="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView3"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView1"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView3"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/otp3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:inputType="number"
-            android:nextFocusDown="@id/otp4"
-            android:nextFocusForward="@id/otp4"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView3"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        app:cardCornerRadius="@dimen/_5sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialCardView4"
-        app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-        app:layout_constraintTop_toTopOf="@+id/materialCardView4"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp"
-        android:layout_marginStart="@dimen/_5sdp"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/otp4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
-            android:hint="x"
-            android:textColor="@color/black"
-            android:inputType="number"
-            android:maxLines="1"
-            android:nextFocusDown="@id/otp5"
-            android:nextFocusForward="@id/otp5"
-            android:textColorHint="@color/grey"
-            android:textSize="@dimen/_18ssp" />
-    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
