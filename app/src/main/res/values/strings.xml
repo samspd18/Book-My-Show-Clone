@@ -20,6 +20,8 @@
     <string name="todo">TODO</string>
     <string name="or">OR</string>
     <string name="it_all_starts_here">It All Starts Here</string>
+    <string name="search_for_your_city">Search for your city</string>
+    <string name="auto_detect_my_location">Auto Detect My Location</string>
 
     <string-array name="marketingArray">
         <item>@string/marketing1</item>

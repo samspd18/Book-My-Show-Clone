@@ -11,5 +11,7 @@ class AppConstants {
         const val youtubeBaseUrl = "https://www.youtube.com/watch?v="
         const val RC_SIGN_IN = 1000
         const val sharedPrefFile = "BookMyShowSharedPreference"
+        const val requestCode = 101
+        val PERMISIISON_ID = 42
     }
 }

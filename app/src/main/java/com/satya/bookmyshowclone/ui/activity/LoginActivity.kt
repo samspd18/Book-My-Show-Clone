@@ -124,10 +124,6 @@ class LoginActivity : AppCompatActivity() {
                 //For adding phoen number
                 addingPhoneNumber()
 
-                val intent = Intent(this, CityActivity::class.java)
-                startActivity(intent)
-                finish()
-
             } else {
                 Toast.makeText(applicationContext, "Login Failed , Try again ", Toast.LENGTH_SHORT).show()
                 val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -167,6 +163,10 @@ class LoginActivity : AppCompatActivity() {
                 val editor: SharedPreferences.Editor =  sharedPreferences.edit()
                 editor.putString("phone",mobileNumber)
                 editor.apply()
+
+                val intent = Intent(this, CityActivity::class.java)
+                startActivity(intent)
+                finish()
 
             } else {
                 Toast.makeText(applicationContext, "Kindly check your number", Toast.LENGTH_SHORT).show()
