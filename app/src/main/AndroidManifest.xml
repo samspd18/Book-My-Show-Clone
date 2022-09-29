@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.satya.bookmyshowclone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-
 
     <application
         android:allowBackup="true"
@@ -20,19 +19,20 @@
         android:theme="@style/Theme.BookMyShowClone"
         tools:targetApi="31">
         <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
+        <activity
             android:name=".ui.activity.CityActivity"
             android:exported="false"
-            android:theme="@style/Theme.BookMyShowClone.NoActionBar"/>
+            android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
         <activity
             android:name=".ui.activity.PhoneNumberActivity"
             android:exported="false"
             android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
-        <activity
-            android:name=".ui.activity.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.BookMyShowClone.NoActionBar" />
         <activity

@@ -1,4 +1,4 @@
-package com.satya.bookmyshowclone.ui.fragment.slideshow
+package com.satya.bookmyshowclone.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

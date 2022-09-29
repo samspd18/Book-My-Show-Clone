@@ -11,6 +11,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.satya.bookmyshowclone.R
 import com.satya.bookmyshowclone.constants.AppConstants.Companion.sharedPrefFile
+import com.satya.bookmyshowclone.ui.MainActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

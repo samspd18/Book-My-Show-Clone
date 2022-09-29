@@ -28,4 +28,5 @@
         <item>@string/marketing2</item>
         <item>@string/marketing3</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

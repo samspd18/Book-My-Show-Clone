@@ -1,4 +1,4 @@
-package com.satya.bookmyshowclone.ui.fragment.gallery
+package com.satya.bookmyshowclone.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
