@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/font/alice.xml" value="0.1" />
-        <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/activity_city.xml" value="0.2" />
+        <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/activity_city.xml" value="0.1" />
         <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/activity_phone_number.xml" value="0.2222222222222222" />
+        <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/city_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/layout/content_main.xml" value="0.10677083333333333" />
+        <entry key="..\:/Android Project/Book My Show Clone/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_phone_number.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21666666666666667" />

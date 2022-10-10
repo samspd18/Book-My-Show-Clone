@@ -18,9 +18,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import com.satya.bookmyshowclone.Adapter.CityAdapter
 import com.satya.bookmyshowclone.constants.AppConstants
 import com.satya.bookmyshowclone.constants.AppConstants.Companion.PERMISIISON_ID
 import com.satya.bookmyshowclone.databinding.ActivityCityBinding
+import com.satya.bookmyshowclone.model.city.City
+import com.satya.bookmyshowclone.model.city.CityArray
 import java.io.IOException
 import java.util.*
 
@@ -31,6 +34,9 @@ class CityActivity : AppCompatActivity() {
     private var latitude = 0.0
     private var longitude = 0.0
 
+    private val adapter = CityAdapter()
+    lateinit var cities: Array<City>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCityBinding.inflate(layoutInflater)
@@ -40,6 +46,12 @@ class CityActivity : AppCompatActivity() {
 
         //click of the detect location
         clickOfTheLocation()
+
+        //city adapter
+        binding.cityRecyclerView.adapter  = adapter
+        cities = CityArray.categories
+        adapter.setCities(cities)
+        adapter.notifyDataSetChanged()
     }
 
     private fun clickOfTheLocation() {

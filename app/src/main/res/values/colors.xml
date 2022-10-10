@@ -11,6 +11,7 @@
 
     <color name="book_my_show_red">#DF1827</color>
     <color name="grey">#808080</color>
+    <color name="grey_light">#FAFAFA</color>
 
 
 </resources>
